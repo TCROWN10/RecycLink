@@ -32,7 +32,7 @@ interface CarbonWise {
     function getAdmins() external view returns (address[] memory);
 }
 
-contract CcMarketPlace {
+contract RcMarketPlace {
     /// @dev Structure to represent information about an item listing.
     struct ItemInfo {
         string description;
