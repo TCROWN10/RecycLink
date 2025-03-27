@@ -108,19 +108,19 @@ contract EventMarketPlace {
     
 
     USDToken usdt;
-    RecycLink RecycLink;
+    RecycLink recycLink;
 
     Statistics statistics;
 
     constructor(address tokenAddress, address RecycLinkAddr) {
         usdt = USDToken(tokenAddress);
-        RecycLink = RecycLink(RecycLinkAddr);
+        recycLink = RecycLink(RecycLinkAddr);
     }
 
     modifier onlyAdmins() {
         bool isAdmin;
-        for (uint i = 0; i < RecycLink.getAdmins().length; i++) {
-            if (RecycLink.getAdmins()[i] == msg.sender) {
+        for (uint i = 0; i < recycLink.getAdmins().length; i++) {
+            if (recycLink.getAdmins()[i] == msg.sender) {
                 isAdmin = true;
             }
         }
