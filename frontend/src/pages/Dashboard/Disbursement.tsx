@@ -9,7 +9,7 @@ import {
   useWriteContract,
 } from "wagmi";
 
-import { CARBONWISEABI, CARBONWISE_ADDRESS } from "../../../constants";
+import { RECYCLINKABI, RECYCLINK_ADDRESS } from "../../../constants";
 import { useWasteWiseContext } from "../../context";
 import useNotificationCount from "../../hooks/useNotificationCount";
 import { useNavigate } from "react-router-dom";
@@ -59,8 +59,8 @@ const Disbursement = () => {
     e.preventDefault();
     // console.log(true);
     writeContract({
-      address: CARBONWISE_ADDRESS,
-      abi: CARBONWISEABI,
+      address: RECYCLINK_ADDRESS,
+      abi: RECYCLINKABI,
       functionName: "disbursement",
     });
   };

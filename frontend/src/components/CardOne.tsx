@@ -1,7 +1,7 @@
 import { useAccount, useContractRead, useReadContract } from "wagmi";
 import { useWasteWiseContext } from "../context";
 import {
-  CARBONWISE_ADDRESS,
+  RECYCLINK_ADDRESS,
   USDTOKENABI,
   USD_TOKEN_ADDRESS,
 } from "../../constants";
@@ -16,7 +16,7 @@ const CardOne = () => {
     address: USD_TOKEN_ADDRESS,
     abi: USDTOKENABI,
     functionName: "balanceOf",
-    args: [CARBONWISE_ADDRESS],
+    args: [RECYCLINK_ADDRESS],
   });
 
   return (

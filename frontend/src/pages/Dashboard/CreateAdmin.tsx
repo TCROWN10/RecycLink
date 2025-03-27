@@ -8,7 +8,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import CARBONWISE_ABI from "../../../constants/carbonwise.json";
 import { toast } from "sonner";
-import { CARBONWISE_ADDRESS } from "../../../constants";
+import { RECYCLINK_ADDRESS } from "../../../constants";
 import { LucideArrowRight } from "lucide-react";
 import {
   Button,
@@ -81,7 +81,7 @@ const CreateAdmin = (props: Props) => {
 
   const handleAddAdmin = async () => {
     writeContract({
-      address: CARBONWISE_ADDRESS,
+      address: RECYCLINK_ADDRESS,
       abi: CARBONWISE_ABI,
       functionName: "createAdmin",
       args: [name, address],
@@ -95,7 +95,7 @@ const CreateAdmin = (props: Props) => {
   const handleAddVerifier = async () => {
     console.log("clicking");
     writeContract2({
-      address: CARBONWISE_ADDRESS,
+      address: RECYCLINK_ADDRESS,
       abi: CARBONWISE_ABI,
       functionName: "createVerifier",
       args: [name, address],

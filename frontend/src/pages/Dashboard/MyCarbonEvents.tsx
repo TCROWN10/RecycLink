@@ -6,8 +6,8 @@ import {
     useReadContract,
 } from "wagmi";
 import {
-    CC_MARKETPLACE_ADDRESS,
-    CCMARKETPLACEABI,
+    RC_MARKETPLACE_ADDRESS ,
+    RCMARKETPLACEABI,
     EVENT_MARKETPLACE_ADDRESS,
     EVENTMARKETPLACEABI,
 } from "../../../constants";
@@ -22,8 +22,8 @@ const MyCarbonEvents = (props: Props) => {
     const { address } = useAccount();
 
     const { isLoading, isError, isSuccess, data, error } = useReadContract({
-        address: CC_MARKETPLACE_ADDRESS,
-        abi: CCMARKETPLACEABI,
+        address: RC_MARKETPLACE_ADDRESS ,
+        abi: RCMARKETPLACEABI,
         functionName: "getCompanyByUser",
         args: [address],
         // onError(data: any) {
@@ -37,8 +37,8 @@ const MyCarbonEvents = (props: Props) => {
     });
 
     useWatchContractEvent({
-        address: CC_MARKETPLACE_ADDRESS,
-        abi: CCMARKETPLACEABI,
+        address: RC_MARKETPLACE_ADDRESS ,
+        abi: RCMARKETPLACEABI,
         eventName: "ListingBought",
         onLogs(log) {
             console.log(log);

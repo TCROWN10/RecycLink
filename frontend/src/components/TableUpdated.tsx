@@ -19,7 +19,7 @@ import {
 } from "@nextui-org/react";
 import { useAccount, useReadContract } from "wagmi";
 import { useWasteWiseContext } from "../context";
-import { CARBONWISE_ADDRESS, CARBONWISEABI } from "../../constants";
+import { RECYCLINK_ADDRESS, RECYCLINKABI } from "../../constants";
 import {
   capitalize,
   formatDate,
@@ -78,8 +78,8 @@ export default function TableUpdated({
   const isSuccess = tableDataSuccess;
 
   // const { data, isSuccess } = useReadContract({
-  //   address: CARBONWISE_ADDRESS,
-  //   abi: CARBONWISEABI,
+  //   address: RECYCLINK_ADDRESS,
+  //   abi: RECYCLINKABI,
   //   functionName: "getAdmins",
   //   account: address,
   // });

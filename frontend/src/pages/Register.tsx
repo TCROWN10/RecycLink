@@ -15,7 +15,7 @@ import { toast } from "sonner";
 import SignUpButton from "../components/SignUpButton";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../components/Logo";
-import { CARBONWISE_ADDRESS, CARBONWISEABI } from "../../constants";
+import { RECYCLINK_ADDRESS, RECYCLINKABI } from "../../constants";
 import useNotificationCount from "../hooks/useNotificationCount";
 import Navbar from "../components/Navbar";
 import { Button } from "@nextui-org/button";
@@ -103,8 +103,8 @@ const Register = () => {
   function handleSubmit(e: any) {
     e.preventDefault();
     writeContract({
-      address: CARBONWISE_ADDRESS,
-      abi: CARBONWISEABI,
+      address: RECYCLINK_ADDRESS,
+      abi: RECYCLINKABI,
       args: [name],
       functionName: "createUserAcct",
       account: address,

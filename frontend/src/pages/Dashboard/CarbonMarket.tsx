@@ -4,7 +4,7 @@ import { formatUnits } from "viem";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import { formatDate } from "../../utils";
-import { CC_MARKETPLACE_ADDRESS, CCMARKETPLACEABI } from "../../../constants";
+import { RC_MARKETPLACE_ADDRESS , RCMARKETPLACEABI } from "../../../constants";
 import { Card, CardBody, CardHeader, Skeleton } from "@nextui-org/react";
 import { GiToken } from "react-icons/gi";
 
@@ -14,13 +14,13 @@ const CarbonMarketplace = (props: Props) => {
   const [listings, setListings] = useState<any[]>([]);
 
   const { isLoading, isError, isSuccess, data, error } = useReadContract({
-    address: CC_MARKETPLACE_ADDRESS,
-    abi: CCMARKETPLACEABI,
+    address: RC_MARKETPLACE_ADDRESS ,
+    abi: RCMARKETPLACEABI,
     functionName: "getAllActiveItemInfo",
   });
   useWatchContractEvent({
-    address: CC_MARKETPLACE_ADDRESS,
-    abi: CCMARKETPLACEABI,
+    address: RC_MARKETPLACE_ADDRESS ,
+    abi: RCMARKETPLACEABI,
     eventName: "ListingCreated",
     onLogs(log) {
       console.log(log);

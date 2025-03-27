@@ -11,7 +11,7 @@ import {
 import useDarkMode from "use-dark-mode";
 import { type DarkMode } from "use-dark-mode";
 import { useAccount, useReadContract } from "wagmi";
-import { CARBONWISE_ADDRESS, CARBONWISEABI } from "../../constants";
+import { RECYCLINK_ADDRESS, RECYCLINKABI } from "../../constants";
 
 type contextType = {
   wastewiseStore: any;
@@ -144,8 +144,8 @@ const WastewiseProvider = ({ children }: { children: ReactNode }) => {
   }, [notifCount]);
 
   const { data } = useReadContract({
-    address: CARBONWISE_ADDRESS,
-    abi: CARBONWISEABI,
+    address: RECYCLINK_ADDRESS,
+    abi: RECYCLINKABI,
     functionName: "getUser",
     // args: [address],
     account: address,
@@ -157,8 +157,8 @@ const WastewiseProvider = ({ children }: { children: ReactNode }) => {
   console.log(address);
 
   const statisticsRead = useReadContract({
-    address: CARBONWISE_ADDRESS,
-    abi: CARBONWISEABI,
+    address: RECYCLINK_ADDRESS,
+    abi: RECYCLINKABI,
     functionName: "getStatistics",
     account: address,
     // onSuccess(data) {
@@ -172,8 +172,8 @@ const WastewiseProvider = ({ children }: { children: ReactNode }) => {
     isStale: isAdminsDataFetching,
     isSuccess: isAdminsDataSuccessful,
   } = useReadContract({
-    address: CARBONWISE_ADDRESS,
-    abi: CARBONWISEABI,
+    address: RECYCLINK_ADDRESS,
+    abi: RECYCLINKABI,
     functionName: "getAdmins",
     account: address,
   });
@@ -184,8 +184,8 @@ const WastewiseProvider = ({ children }: { children: ReactNode }) => {
     isStale: isAllUsersDataFetching,
     isSuccess: isAllUsersDataSuccessful,
   } = useReadContract({
-    address: CARBONWISE_ADDRESS,
-    abi: CARBONWISEABI,
+    address: RECYCLINK_ADDRESS,
+    abi: RECYCLINKABI,
     functionName: "getAllUsers",
     account: address,
   });
@@ -197,8 +197,8 @@ const WastewiseProvider = ({ children }: { children: ReactNode }) => {
     isStale: isVerifiersDataStale,
     isFetching: isVerifiersDataFetching,
   } = useReadContract({
-    address: CARBONWISE_ADDRESS,
-    abi: CARBONWISEABI,
+    address: RECYCLINK_ADDRESS,
+    abi: RECYCLINKABI,
     functionName: "getVerifiers",
     account: address,
   });

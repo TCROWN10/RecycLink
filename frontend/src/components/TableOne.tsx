@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useAccount, useBalance, useReadContract } from "wagmi";
 import {
-  CARBONWISE_ADDRESS,
+  RECYCLINK_ADDRESS,
   USD_TOKEN_ADDRESS,
-  CARBONWISEABI,
+  RECYCLINKABI,
 } from "../../constants";
 import BrandOne from "../assets/images/brand/brand-01.svg";
 import BrandTwo from "../assets/images/brand/brand-02.svg";
@@ -19,8 +19,8 @@ const TableOne = () => {
   const [leaderboard, setLeaderboard] = useState<boolean>(false);
 
   const { data, isSuccess } = useReadContract({
-    address: CARBONWISE_ADDRESS,
-    abi: CARBONWISEABI,
+    address: RECYCLINK_ADDRESS,
+    abi: RECYCLINKABI,
     functionName: "getAllUsers",
     account: address,
   });

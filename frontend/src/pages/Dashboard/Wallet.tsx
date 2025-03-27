@@ -2,8 +2,8 @@ import { useAccount, useReadContract, useWatchContractEvent } from "wagmi";
 import { useWasteWiseContext } from "../../context";
 import { formatDate, formatDateShort, shortenAddress } from "../../utils";
 import {
-  CARBONWISE_ADDRESS,
-  CARBONWISEABI,
+  RECYCLINK_ADDRESS,
+  RECYCLINKABI,
   USD_TOKEN_ADDRESS,
   USDTOKENABI,
 } from "../../../constants";
@@ -31,15 +31,15 @@ const Wallet = () => {
   const notificationCount = useNotificationCount();
 
   const { data, isSuccess } = useReadContract({
-    address: CARBONWISE_ADDRESS,
-    abi: CARBONWISEABI,
+    address: RECYCLINK_ADDRESS,
+    abi: RECYCLINKABI,
     functionName: "getUserTransactions",
     account: address,
   });
 
   const recycledData = useReadContract({
-    address: CARBONWISE_ADDRESS,
-    abi: CARBONWISEABI,
+    address: RECYCLINK_ADDRESS,
+    abi: RECYCLINKABI,
     functionName: "getUserRecycles",
     account: address,
   });
@@ -59,8 +59,8 @@ const Wallet = () => {
   }, [gotTokenBalance]);
   // Plastic Deposit event
   useWatchContractEvent({
-    address: CARBONWISE_ADDRESS,
-    abi: CARBONWISEABI,
+    address: RECYCLINK_ADDRESS,
+    abi: RECYCLINKABI,
     eventName: "PlasticDeposited",
     onLogs(log) {
       // Handle the event returned here.
@@ -82,8 +82,8 @@ const Wallet = () => {
           },
         });
         const { data } = useReadContract({
-          address: CARBONWISE_ADDRESS,
-          abi: CARBONWISEABI,
+          address: RECYCLINK_ADDRESS,
+          abi: RECYCLINKABI,
           functionName: "getUserTransactions",
           account: address,
         });
@@ -95,8 +95,8 @@ const Wallet = () => {
 
   // Profile Update event
   useWatchContractEvent({
-    address: CARBONWISE_ADDRESS,
-    abi: CARBONWISEABI,
+    address: RECYCLINK_ADDRESS,
+    abi: RECYCLINKABI,
     eventName: "UserEdited",
     onLogs(log) {
       // Handle the event returned here.

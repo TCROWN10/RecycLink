@@ -9,7 +9,7 @@ import {
   useWriteContract,
 } from "wagmi";
 
-import { CARBONWISEABI, CARBONWISE_ADDRESS } from "../../../constants";
+import { RECYCLINKABI, RECYCLINK_ADDRESS } from "../../../constants";
 import { useWasteWiseContext } from "../../context";
 import useNotificationCount from "../../hooks/useNotificationCount";
 import { useNavigate } from "react-router-dom";
@@ -65,8 +65,8 @@ const Recycle = () => {
     e.preventDefault();
     // console.log(true);
     depositPlasticWrite({
-      address: CARBONWISE_ADDRESS,
-      abi: CARBONWISEABI,
+      address: RECYCLINK_ADDRESS,
+      abi: RECYCLINKABI,
       functionName: "depositPlastic",
       args: [numPlastic, userId],
     });

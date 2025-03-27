@@ -1,4 +1,4 @@
-# Carbon-Wise Smart Contract Documentation
+# RecycLink Smart Contract Documentation
 
 ![Image](./carbon-wise-logo.svg)
 

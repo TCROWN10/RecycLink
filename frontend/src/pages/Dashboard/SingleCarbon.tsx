@@ -11,8 +11,8 @@ import { formatEther, formatUnits, parseEther } from "viem";
 import { formatDate } from "../../utils";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import {
-  CC_MARKETPLACE_ADDRESS,
-  CCMARKETPLACEABI,
+  RC_MARKETPLACE_ADDRESS ,
+  RCMARKETPLACEABI,
   EVENT_MARKETPLACE_ADDRESS,
   EVENTMARKETPLACEABI,
   USD_TOKEN_ADDRESS,
@@ -65,8 +65,8 @@ const SingleCarbon = () => {
   } = useWriteContract();
 
   const { isLoading, data, isSuccess } = useReadContract({
-    address: CC_MARKETPLACE_ADDRESS,
-    abi: CCMARKETPLACEABI,
+    address: RC_MARKETPLACE_ADDRESS ,
+    abi: RCMARKETPLACEABI,
     functionName: "getItemInfo",
     args: [id],
     // onError(data: any) {
@@ -82,7 +82,7 @@ const SingleCarbon = () => {
     address: USD_TOKEN_ADDRESS,
     abi: USDTOKENABI,
     functionName: "allowance",
-    args: [address, CC_MARKETPLACE_ADDRESS],
+    args: [address, RC_MARKETPLACE_ADDRESS ],
     // onError(data: any) {
     //     console.log(data);
     // },
@@ -185,7 +185,7 @@ const SingleCarbon = () => {
       address: USD_TOKEN_ADDRESS,
       abi: USDTOKENABI,
       functionName: "approve",
-      args: [CC_MARKETPLACE_ADDRESS, parseEther(`${total}`)],
+      args: [RC_MARKETPLACE_ADDRESS , parseEther(`${total}`)],
       // onError(data: any) {
       //     console.log(data);
       //     toast.error("Approval failed");
@@ -198,8 +198,8 @@ const SingleCarbon = () => {
     console.log(true);
     // write2?.();
     writeContract({
-      address: CC_MARKETPLACE_ADDRESS,
-      abi: CCMARKETPLACEABI,
+      address: RC_MARKETPLACE_ADDRESS ,
+      abi: RCMARKETPLACEABI,
       functionName: "buyListing",
       args: [listing?.itemId],
       // onError(data: any) {

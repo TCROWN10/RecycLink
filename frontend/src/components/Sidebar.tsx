@@ -5,7 +5,7 @@ import { activeBgColor } from "../utils";
 import Logo from "./Logo";
 import { useAccount, useReadContract } from "wagmi";
 import { useWasteWiseContext } from "../context";
-import { CARBONWISE_ADDRESS, CARBONWISEABI } from "../../constants";
+import { RECYCLINK_ADDRESS, RECYCLINKABI } from "../../constants";
 import { MdEventNote, MdAdminPanelSettings } from "react-icons/md";
 import {
   FaBuildingCircleArrowRight,
@@ -39,8 +39,8 @@ const Sidebar = (props: Props) => {
   const { address } = useAccount();
   const { currentUser } = useWasteWiseContext();
   const { data, isLoading, isSuccess } = useReadContract({
-    address: CARBONWISE_ADDRESS,
-    abi: CARBONWISEABI,
+    address: RECYCLINK_ADDRESS,
+    abi: RECYCLINKABI,
     functionName: "getCompany",
     account: address,
   });

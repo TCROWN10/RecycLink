@@ -5,7 +5,7 @@ import {
   useWriteContract,
 } from "wagmi";
 import { useNavigate } from "react-router-dom";
-import { CC_MARKETPLACE_ADDRESS, CCMARKETPLACEABI } from "../../../constants";
+import { RC_MARKETPLACE_ADDRESS , RCMARKETPLACEABI } from "../../../constants";
 import { pinFileToIPFS } from "../../utils";
 import { toast } from "sonner";
 import { parseEther } from "viem";
@@ -42,8 +42,8 @@ const CreateCarbon = (props: Props) => {
       return;
     }
     writeContract({
-      address: CC_MARKETPLACE_ADDRESS,
-      abi: CCMARKETPLACEABI,
+      address: RC_MARKETPLACE_ADDRESS ,
+      abi: RCMARKETPLACEABI,
       functionName: "createListing",
       args: [description, price],
       // onError() {

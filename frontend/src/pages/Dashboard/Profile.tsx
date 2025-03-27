@@ -3,7 +3,7 @@ import { useContractWrite, useSimulateContract, useWriteContract } from "wagmi";
 import Button from "../../components/Button";
 import { useWasteWiseContext } from "../../context";
 import { formatDate } from "../../utils";
-import { CARBONWISE_ADDRESS, CARBONWISEABI } from "../../../constants";
+import { RECYCLINK_ADDRESS, RECYCLINKABI } from "../../../constants";
 import { toast } from "sonner";
 import useNotificationCount from "../../hooks/useNotificationCount";
 import { useNavigate } from "react-router-dom";
@@ -21,8 +21,8 @@ const Profile = () => {
   const [isEmailValid, setIsEmailValid] = useState<boolean>(true);
 
   const { data, error, isError, isLoading, isSuccess } = useSimulateContract({
-    address: CARBONWISE_ADDRESS,
-    abi: CARBONWISEABI,
+    address: RECYCLINK_ADDRESS,
+    abi: RECYCLINKABI,
     args: [{ ...currentUser, country, gender, phoneNo, email }],
     functionName: "editUser",
   });

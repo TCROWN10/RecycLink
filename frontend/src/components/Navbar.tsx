@@ -8,7 +8,7 @@ import SignUpButton from "./SignUpButton";
 import Logo from "./Logo";
 // import Button from "./Button";
 import { useWasteWiseContext } from "../context";
-import { CARBONWISE_ADDRESS, CARBONWISEABI } from "../../constants";
+import { RECYCLINK_ADDRESS, RECYCLINKABI } from "../../constants";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { Button } from "@nextui-org/button";
 import NewUserConnectModal from "./NewConnectModal";
@@ -29,8 +29,8 @@ const Navbar = () => {
   const { currentUser, isRegistered } = useWasteWiseContext();
   const [company, setCompany] = useState<any>();
   const { data, isLoading, isSuccess } = useReadContract({
-    address: CARBONWISE_ADDRESS,
-    abi: CARBONWISEABI,
+    address: RECYCLINK_ADDRESS,
+    abi: RECYCLINKABI,
     functionName: "getCompany",
     account: address,
   });
