@@ -1,7 +1,10 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from "react-router-dom";
+import { useAccount } from "wagmi";
 import Navbar from "../components/Navbar";
 import Recycle from "../components/Recycle";
 import Reward from "../components/Reward";
-import { useAccount } from "wagmi";
 import Faq from "../components/Faq";
 import Future from "../components/Future";
 import Bottom from "../components/Bottom";
@@ -10,7 +13,8 @@ import Button from "../components/Button";
 import Logo from "../components/Logo";
 import { WasteWise } from "../components/WasteWise";
 import SignUpButton from "../components/SignUpButton";
-import recycle1 from "../assets/recycle_1.jpeg";
+import SDG from "../components/SDG";
+import recycle1 from "../assets/transparent_recycle2 2.png";
 import {
   community,
   plasticOnEarth,
@@ -19,43 +23,80 @@ import {
   tr1hd,
   wasteOnLand,
 } from "../assets";
-import { Link } from "react-router-dom";
-import SDG from "../components/SDG";
 
-type Props = {};
+const TextReplacementAnimation = () => {
+  const replacementTexts = [
+    'Track',
+    'Trade',
+    'Earn',
+    'Sustain'
+  ];
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
-const Landing = (props: Props) => {
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTextIndex((prevIndex) => 
+        (prevIndex + 1) % replacementTexts.length
+      );
+    }, 2000); // Change text every 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="relative h-12 sm:h-16 md:h-20 lg:h-24">
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={currentTextIndex}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -50 }}
+          transition={{ 
+            duration: 0.5,
+            type: "spring",
+            stiffness: 100
+          }}
+          className="absolute text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#824d9f] to-[#d800ff] inline-block text-transparent bg-clip-text"
+        >
+          {replacementTexts[currentTextIndex]}
+        </motion.span>
+      </AnimatePresence>
+    </div>
+  );
+};
+
+const Landing = () => {
   return (
     <section>
       <Navbar />
-      {/* <!-- Gradients --> */}
-      {/* <div aria-hidden="true" className="flex absolute top-24 start-0 -z-[1]">
-        <div className="bg-green-100 opacity-30 blur-3xl w-[1036px] h-[600px] dark:bg-green-900 dark:opacity-20"></div>
-        <div className="bg-base-200 opacity-90 blur-3xl w-[577px] h-[300px] transform translate-y-32 dark:bg-base-800/60"></div>
-      </div> */}
+      
+      {/* Hero Section */}
       <div className="hero before:top-0 before:-hue-rotate-90 before:absolute lg:before:scale-100 lg:before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] before:bg-no-repeat before:bg-top before:bg-cover before:w-full before:h-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element-dark.svg')] dark:before:opacity-30">
         <div className="hero-content text-left w-full min-w-full flex flex-col lg:flex-row lg:space-x-8">
           <div className="w-full px-2 pt-12 lg:px-12 lg:py-40">
             <div className="min-w-6/12">
-              <h1 className="relative w-full text-center text-4xl font-bold lg:pr-4 lg:w-8/12 lg:text-6xl lg:text-left">
-                <div className="w-11/12 mx-auto">Together,</div>
-                <div className="w-11/12 mx-auto text-7xl leading-[1.4]">
-                  We can
-                </div>
-                <span className="bg-gradient-to-r from-[#2C8258] to-[#FFDE52] inline-block text-transparent text-[5rem] leading-[1.2] lg:text-9xl bg-clip-text lg:py-2">
-                  Recycle
-                </span>
-              </h1>
+              <div className="w-full px-4 md:px-6 lg:px-8">
+                <h1 className="text-center lg:text-left max-w-6xl mx-auto">
+                  {/* <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium mb-2 md:mb-4">
+                    Revolutionizing Recycling with Web3
+                  </div> */}
+                  <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start space-y-2 lg:space-y-0 lg:space-x-3">
+                    <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+                    Revolutionizing Recycling with Web3
+                    <TextReplacementAnimation />
+                    </div>
+                  </div>
+                </h1>
+              </div>
               <div className="space-y-4 w-full py-6 text-2xl text-center lg:w-8/12 lg:text-2xl lg:text-left lg:py-12">
                 <p>
                   Let's collaborate to build a more sustainable future. Together, we can make a difference—one recycled plastic at a time!
                 </p>
                 <p className="text-2xl lg:text-2xl">
-                Be part of the movement to turn plastic waste into valuable resources!
+                  Be part of the movement to turn plastic waste into valuable resources!
                 </p>
               </div>
             </div>
-            {/* <Button name="Get Started - for Free" /> */}
           </div>
           <div className="relative overflow-x-hidden self-stretch flex flex-col items-end justify-center w-full before:-hue-rotate-90 before:absolute before:top-0 before:right-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/component/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:bg-right before:w-full before:h-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-[url('https://preline.co/assets/svg/component/squared-bg-element-dark.svg')]">
             <img
@@ -66,24 +107,19 @@ const Landing = (props: Props) => {
           </div>
         </div>
       </div>
+
+      {/* Environmental Impact Section */}
       <section className="mt-20 lg:m-0">
         <div className="text-center">
-        Make smart choices—locate our recycling partners, dispose of your waste responsibly, and earn rewards for your efforts!
+          Make smart choices—locate our recycling partners, dispose of your waste responsibly, and earn rewards for your efforts!
         </div>
         <div className="text-center text-4xl font-bold px-2 py-5">
-        Play your role in protecting the planet from plastic pollution.
+          Play your role in protecting the planet from plastic pollution.
           <br />
         </div>
         <div className="text-center text-2xl pt-6">
-        Plastic pollution affects the environment in the following ways:
+          Plastic pollution affects the environment in the following ways:
         </div>
-        {/* <div className="text-center">
-          Work with the
-          <br />
-          UN Sustainable Development Goals
-          <br />
-          SDG(3, 6, 11, 14 and 15)
-        </div> */}
 
         <SDG
           title="Effects on Marine Ecosystems"
@@ -140,6 +176,7 @@ const Landing = (props: Props) => {
         </SDG>
       </section>
 
+      {/* SDG Quote Section */}
       <div className="w-full p-4 text-center mx-auto my-24 lg:w-8/12 lg:my-32">
         <blockquote className="relative">
           <svg
@@ -152,7 +189,7 @@ const Landing = (props: Props) => {
             aria-hidden="true"
           >
             <path
-              d="M7.39762 10.3C7.39762 11.0733 7.14888 11.7 6.6514 12.18C6.15392 12.6333 5.52552 12.86 4.76621 12.86C3.84979 12.86 3.09047 12.5533 2.48825 11.94C1.91222 11.3266 1.62421 10.4467 1.62421 9.29999C1.62421 8.07332 1.96459 6.87332 2.64535 5.69999C3.35231 4.49999 4.33418 3.55332 5.59098 2.85999L6.4943 4.25999C5.81354 4.73999 5.26369 5.27332 4.84476 5.85999C4.45201 6.44666 4.19017 7.12666 4.05926 7.89999C4.29491 7.79332 4.56983 7.73999 4.88403 7.73999C5.61716 7.73999 6.21938 7.97999 6.69067 8.45999C7.16197 8.93999 7.39762 9.55333 7.39762 10.3ZM14.6242 10.3C14.6242 11.0733 14.3755 11.7 13.878 12.18C13.3805 12.6333 12.7521 12.86 11.9928 12.86C11.0764 12.86 10.3171 12.5533 9.71484 11.94C9.13881 11.3266 8.85079 10.4467 8.85079 9.29999C8.85079 8.07332 9.19117 6.87332 9.87194 5.69999C10.5789 4.49999 11.5608 3.55332 12.8176 2.85999L13.7209 4.25999C13.0401 4.73999 12.4903 5.27332 12.0713 5.85999C11.6786 6.44666 11.4168 7.12666 11.2858 7.89999C11.5215 7.79332 11.7964 7.73999 12.1106 7.73999C12.8437 7.73999 13.446 7.97999 13.9173 8.45999C14.3886 8.93999 14.6242 9.55333 14.6242 10.3Z"
+              d="M7.39762 10.11c0 .926-.756 1.681-1.681 1.681S0 11.036 0 10.111C0 9.186.756 8.43 1.68 8.43h1.682v1.68zm.846 0c0-.924.756-1.68 1.681-1.68s1.681.756 1.681 1.68v4.21c0 .924-.756 1.68-1.68 1.68a1.685 1.685 0 0 1-1.682-1.68v-4.21zM5.89 3.362c-.926 0-1.682-.756-1.682-1.681S4.964 0 5.89 0s1.68.756 1.68 1.68v1.682H5.89zm0 .846c.924 0 1.68.756 1.68 1.681S6.814 7.57 5.89 7.57H1.68C.757 7.57 0 6.814 0 5.89c0-.926.756-1.682 1.68-1.682h4.21zm6.749 1.682c0-.926.755-1.682 1.68-1.682.925 0 1.681.756 1.681 1.681s-.756 1.681-1.68 1.681h-1.681V5.89zm-.848 0c0 .924-.755 1.68-1.68 1.68A1.685 1.685 0 0 1 8.43 5.89V1.68C8.43.757 9.186 0 10.11 0c.926 0 1.681.756 1.681 1.68v4.21zm-1.681 6.748c.926 0 1.682.756 1.682 1.681S11.036 16 10.11 16s-1.681-.756-1.681-1.68v-1.682h1.68zm0-.847c-.924 0-1.68-.755-1.68-1.68 0-.925.756-1.681 1.68-1.681h4.21c.924 0 1.68.756 1.68 1.68 0 .926-.756 1.681-1.68 1.681h-4.21z"
               fill="currentColor"
             />
           </svg>
@@ -176,10 +213,9 @@ const Landing = (props: Props) => {
         </blockquote>
       </div>
 
+      {/* Mission Section */}
       <section className="hero min-h-screen bg-base-200">
-        {/* <!-- Testimonials --> */}
         <div className="relative max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-          {/* <!-- Blockquote --> */}
           <blockquote className="text-center lg:mx-auto lg:w-3/5">
             <div className="mx-auto w-20 h-auto sm:w-28 text-gray-800 text-xl font-semibold dark:text-gray-200">
               Our Mission
@@ -197,7 +233,7 @@ const Landing = (props: Props) => {
                   aria-hidden="true"
                 >
                   <path
-                    d="M7.18079 9.25611C7.18079 10.0101 6.93759 10.6211 6.45119 11.0891C5.96479 11.5311 5.35039 11.7521 4.60799 11.7521C3.71199 11.7521 2.96958 11.4531 2.38078 10.8551C1.81758 10.2571 1.53598 9.39911 1.53598 8.28111C1.53598 7.08511 1.86878 5.91511 2.53438 4.77111C3.22559 3.60111 4.18559 2.67811 5.41439 2.00211L6.29759 3.36711C5.63199 3.83511 5.09439 4.35511 4.68479 4.92711C4.30079 5.49911 4.04479 6.16211 3.91679 6.91611C4.14719 6.81211 4.41599 6.76011 4.72319 6.76011C5.43999 6.76011 6.02879 6.99411 6.48959 7.46211C6.95039 7.93011 7.18079 8.52811 7.18079 9.25611ZM14.2464 9.25611C14.2464 10.0101 14.0032 10.6211 13.5168 11.0891C13.0304 11.5311 12.416 11.7521 11.6736 11.7521C10.7776 11.7521 10.0352 11.4531 9.44639 10.8551C8.88319 10.2571 8.60159 9.39911 8.60159 8.28111C8.60159 7.08511 8.93439 5.91511 9.59999 4.77111C10.2912 3.60111 11.2512 2.67811 12.48 2.00211L13.3632 3.36711C12.6976 3.83511 12.16 4.35511 11.7504 4.92711C11.3664 5.49911 11.1104 6.16211 10.9824 6.91611C11.2128 6.81211 11.4816 6.76011 11.7888 6.76011C12.5056 6.76011 13.0944 6.99411 13.5552 7.46211C14.016 7.93011 14.2464 8.52811 14.2464 9.25611Z"
+                    d="M7.18079 9.25611c0 .926-.756 1.681-1.681 1.681S0 11.036 0 10.111C0 9.186.756 8.43 1.68 8.43h1.682v1.68zm.846 0c0-.924.756-1.68 1.681-1.68s1.681.756 1.681 1.68v4.21c0 .924-.756 1.68-1.68 1.68a1.685 1.685 0 0 1-1.682-1.68v-4.21zM5.89 3.362c-.926 0-1.682-.756-1.682-1.681S4.964 0 5.89 0s1.68.756 1.68 1.68v1.682H5.89zm0 .846c.924 0 1.68.756 1.68 1.681S6.814 7.57 5.89 7.57H1.68C.757 7.57 0 6.814 0 5.89c0-.926.756-1.682 1.68-1.682h4.21zm6.749 1.682c0-.926.755-1.682 1.68-1.682.925 0 1.681.756 1.681 1.681s-.756 1.681-1.68 1.681h-1.681V5.89zm-.848 0c0 .924-.755 1.68-1.68 1.68A1.685 1.685 0 0 1 8.43 5.89V1.68C8.43.757 9.186 0 10.11 0c.926 0 1.681.756 1.681 1.68v4.21zm-1.681 6.748c.926 0 1.682.756 1.682 1.681S11.036 16 10.11 16s-1.681-.756-1.681-1.68v-1.682h1.68zm0-.847c-.924 0-1.68-.755-1.68-1.68 0-.925.756-1.681 1.68-1.681h4.21c.924 0 1.68.756 1.68 1.68 0 .926-.756 1.681-1.68 1.681h-4.21z"
                     fill="currentColor"
                   />
                 </svg>
@@ -218,20 +254,14 @@ const Landing = (props: Props) => {
               <div className="font-semibold text-gray-800 dark:text-neutral-content">
                 RecycLink Team
               </div>
-              {/* <div className="text-sm text-gray-500">
-                Product Manager | Airbnb
-              </div> */}
             </footer>
           </blockquote>
-          {/* <!-- End Blockquote --> */}
         </div>
-        {/* <!-- End Testimonials --> */}
       </section>
 
+      {/* Hidden Roadmap Section */}
       <section className="hero min-h-screen bg-base-100 hidden">
-        {/* <!-- Testimonials --> */}
         <div className="relative max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-          {/* <!-- Blockquote --> */}
           <blockquote className="text-center lg:mx-auto lg:w-3/5">
             <div className="mx-auto w-20 h-auto sm:w-28 text-gray-800 text-xl font-semibold dark:text-gray-200">
               Our Roadmap
@@ -407,16 +437,12 @@ const Landing = (props: Props) => {
 
             <footer className="mt-6"></footer>
           </blockquote>
-          {/* <!-- End Blockquote --> */}
         </div>
-        {/* <!-- End Testimonials --> */}
       </section>
 
-      
+      {/* FAQ Section */}
       <section>
-        {/* <!-- FAQ --> */}
         <div className="bg-base-300 px-4 py-10 sm:px-6 lg:px-8 lg:py-24 mx-auto">
-          {/* <!-- Title --> */}
           <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
             <h2 className="text-2xl font-bold md:text-3xl md:leading-tight text-gray-800 dark:text-gray-200">
               Frequently Asked Questions
@@ -425,10 +451,8 @@ const Landing = (props: Props) => {
               Answers to the most frequently asked questions.
             </p>
           </div>
-          {/* <!-- End Title --> */}
 
           <div className="max-w-5xl mx-auto">
-            {/* <!-- Grid --> */}
             <div className="grid sm:grid-cols-2 gap-6 md:gap-12">
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -443,7 +467,6 @@ const Landing = (props: Props) => {
                 and a rewards system.
                 </p>
               </div>
-              {/* <!-- End Col --> */}
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -461,14 +484,13 @@ const Landing = (props: Props) => {
                     This system encourages recycling, reduces plastic waste, and fosters a transparent market for carbon credits, supporting global sustainability efforts.
                 </p>
               </div>
-              {/* <!-- End Col --> */}
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
                   Q: What are carbon credits and why are they important?
                 </h3>
                 <p className="mt-2 text-gray-600 dark:text-gray-400">
-                Carbon credits are like points earned for reducing pollution. Each credit represents one ton of carbon dioxide (or similar gases) that didn’t go into the air. They help fight climate change by rewarding people and businesses for making eco-friendly choices.
+                Carbon credits are like points earned for reducing pollution. Each credit represents one ton of carbon dioxide (or similar gases) that didn't go into the air. They help fight climate change by rewarding people and businesses for making eco-friendly choices.
                 In RecycLink:Carbon credits are created when plastics are recycled instead of making new plastic.
                 These credits show how much pollution was avoided.
                 They are stored on the blockchain, making them easy to track and trade.
@@ -476,7 +498,6 @@ const Landing = (props: Props) => {
                 encouraging everyone to reduce waste and protect the planet.
                 </p>
               </div>
-              {/* <!-- End Col --> */}
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -489,7 +510,6 @@ const Landing = (props: Props) => {
                 Join us in reducing plastic pollution while getting rewarded!
                 </p>
               </div>
-              {/* <!-- End Col --> */}
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -499,7 +519,6 @@ const Landing = (props: Props) => {
                   A: No, there is no cost to participate in RecycLink.
                 </p>
               </div>
-              {/* <!-- End Col --> */}
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -510,7 +529,6 @@ const Landing = (props: Props) => {
                   as many protocols as possible.
                 </p>
               </div>
-              {/* <!-- End Col --> */}
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -522,7 +540,6 @@ const Landing = (props: Props) => {
                   blockchain technology.
                 </p>
               </div>
-              {/* <!-- End Col --> */}
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -535,7 +552,6 @@ const Landing = (props: Props) => {
                   plastic recycling and generating carbon credits.
                 </p>
               </div>
-              {/* <!-- End Col --> */}
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -548,7 +564,6 @@ const Landing = (props: Props) => {
                   estimates based on industry standards.
                 </p>
               </div>
-              {/* <!-- End Col --> */}
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -562,14 +577,13 @@ const Landing = (props: Props) => {
                   and sustainable solution to the plastic waste crisis.
                 </p>
               </div>
-              {/* <!-- End Col --> */}
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
                   Q: Who can participate in RecycLink?
                 </h3>
                 <p className="mt-2 text-gray-600 dark:text-gray-400">
-                  A: Everyone! Whether you’re an individual looking to recycle
+                  A: Everyone! Whether you're an individual looking to recycle
                   and earn rewards or a business seeking to reduce your carbon
                   footprint by purchasing carbon credits, RecycLink has
                   something for everyone. We also work with private waste
@@ -577,7 +591,6 @@ const Landing = (props: Props) => {
                   practices.
                 </p>
               </div>
-              {/* <!-- End Col --> */}
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -591,7 +604,6 @@ const Landing = (props: Props) => {
                   responsibility efforts.
                 </p>
               </div>
-              {/* <!-- End Col --> */}
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -605,7 +617,6 @@ const Landing = (props: Props) => {
                   platform.
                 </p>
               </div>
-              {/* <!-- End Col --> */}
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -621,7 +632,6 @@ const Landing = (props: Props) => {
                   sustainable practices that benefit both people and the planet.
                 </p>
               </div>
-              {/* <!-- End Col --> */}
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
@@ -630,17 +640,15 @@ const Landing = (props: Props) => {
                 <p className="mt-2 text-gray-600 dark:text-gray-400">
                   A: For more information or inquiries, please reach out to us
                   via our contact page or send us a DM on our social media
-                  handles. We’re here to help!
+                  handles. We're here to help!
                 </p>
               </div>
-              {/* <!-- End Col --> */}
             </div>
-            {/* <!-- End Grid --> */}
           </div>
         </div>
-        {/* <!-- End FAQ --> */}
       </section>
 
+      {/* Footer Section */}
       <section>
         <footer className="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
           {/* <!-- Grid --> */}

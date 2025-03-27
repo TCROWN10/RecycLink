@@ -57,7 +57,7 @@ module.exports = {
         "meta-7": "#FF6766",
         "meta-8": "#F0950C",
         "meta-9": "#E5E7EB",
-        success: "#219653",
+        success: "#814D9E",
         danger: "#D34053",
         warning: "#FFA70B",
         ...defaultTheme.colors,
@@ -216,10 +216,10 @@ module.exports = {
         65: ".65",
       },
       backgroundImage: {
-        video: "url('../images/video/video.png')",
+        video: "",
       },
       content: {
-        "icon-copy": 'url("../images/icon/icon-copy-alt.svg")',
+        "icon-copy": '',
       },
       transitionProperty: { width: "width", stroke: "stroke" },
       borderWidth: {

@@ -278,6 +278,7 @@ export function WasteWise() {
           type={"button"}
           disabled={!connectors[0].id}
           isLoading={isPending}
+          className="text-White"
         >
           {isPending ? (
             <span className="">Connecting...</span>
