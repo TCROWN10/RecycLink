@@ -6,7 +6,7 @@ import {
 } from "wagmi";
 // import Button from "../../components/Button";
 import { useNavigate } from "react-router-dom";
-import CARBONWISE_ABI from "../../../constants/carbonwise.json";
+import RECYCLINK_ABI from "../../../constants/Recyclink.json";
 import { toast } from "sonner";
 import { RECYCLINK_ADDRESS } from "../../../constants";
 import { LucideArrowRight } from "lucide-react";
@@ -82,7 +82,7 @@ const CreateAdmin = (props: Props) => {
   const handleAddAdmin = async () => {
     writeContract({
       address: RECYCLINK_ADDRESS,
-      abi: CARBONWISE_ABI,
+      abi: RECYCLINK_ABI,
       functionName: "createAdmin",
       args: [name, address],
       // onError(data: any) {
@@ -96,7 +96,7 @@ const CreateAdmin = (props: Props) => {
     console.log("clicking");
     writeContract2({
       address: RECYCLINK_ADDRESS,
-      abi: CARBONWISE_ABI,
+      abi: RECYCLINK_ABI,
       functionName: "createVerifier",
       args: [name, address],
     });

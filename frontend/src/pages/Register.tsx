@@ -162,9 +162,9 @@ const Register = () => {
                 isClearable
                 isRequired
                 size="lg"
-                label="Your name or pseudonym"
+                label="Your name"
                 labelPlacement="outside"
-                placeholder="e.g., blessed07"
+                placeholder="e.g., Tcrown"
                 value={name}
                 onValueChange={setName}
                 classNames={{
@@ -179,7 +179,7 @@ const Register = () => {
                 onClick={handleSubmit}
                 isLoading={isLoading || settling}
                 isDisabled={!name}
-                className="w-6/12"
+                className="w-6/12 text-White"
               >
                 Register
               </Button>
@@ -216,8 +216,7 @@ const Register = () => {
               </CardHeader>
               <CardBody>
                 <NLink
-                  // href={`https://base-sepolia.blockscout.com/tx/${hash}`}
-                  href={`https://sepolia-blockscout.lisk.com/tx/${hash}`}
+                  href={`https://educhain.blockscout.com/${hash}`}
                   isExternal
                 >
                   Confirm your transaction on-Chain
@@ -233,7 +232,7 @@ const Register = () => {
           </div>
         </div>
 
-        <div className="bg-gradient-to-t from-[#CBE5D8] to-[#FFFFFF] dark:bg-gradient-to-t dark:from-yellow-500/10 dark:to-emerald-500/40 w-1/2 px-16 hidden lg:flex lg:flex-col lg:justify-center dark:bg-transparent">
+        <div className="bg-gradient-to-t from-[#611286] to-[#FFFFFF] dark:bg-gradient-to-t dark:from-[rgba(143,41,191,0.4)] dark:to-[rgba(97,18,134,0.1)] w-1/2 px-16 hidden lg:flex lg:flex-col lg:justify-center dark:bg-transparent">
           {/* <h1
             className="light:text-[#02582E] text-2xl font-extrabold mb-3
 "
