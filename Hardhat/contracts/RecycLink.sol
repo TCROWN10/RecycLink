@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-interface USDTestToken {
+interface ReUSDToken {
 
     function balanceOf(address account) external view returns (uint256);
 
@@ -14,7 +14,7 @@ interface USDTestToken {
  * @author Tcrown ,Graphic doctor , Ayobami
  */
 contract RecycLink {
-    USDTestToken usdt; // An instance of RRecycLink contract.
+    ReUSDToken usdt; // An instance of RRecycLink contract.
 
     // Create state variables that will be used for statistics
     struct Statistics {
@@ -202,7 +202,7 @@ contract RecycLink {
     }
 
     constructor(address tokenAddress, address[] memory _admins) {
-        usdt = USDTestToken(tokenAddress);
+        usdt = ReUSDToken(tokenAddress);
         // Set each address in _admins as an admin
         for (uint i = 0; i < _admins.length; i++) {
             User storage user = UserMap[_admins[i]];
