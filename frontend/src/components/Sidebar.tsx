@@ -44,6 +44,7 @@ const Sidebar = (props: Props) => {
     functionName: "getCompany",
     account: address,
   });
+  console.log("Current user", currentUser);
 
   useEffect(() => {
     if (isSuccess) {

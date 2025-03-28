@@ -40,7 +40,9 @@ const Register = () => {
     isError,
     isPending: isLoading,
     isSuccess,
+    error:error1
   } = useWriteContract();
+  console.log(error1)
 
   const { isLoading: settling, error, isSuccess: isSuccess2 } = useWaitForTransactionReceipt({
     confirmations: 1,
@@ -101,6 +103,7 @@ const Register = () => {
   }, [isLoading]);
 
   function handleSubmit(e: any) {
+    console.log("clicked")
     e.preventDefault();
     writeContract({
       address: RECYCLINK_ADDRESS,
@@ -109,6 +112,7 @@ const Register = () => {
       functionName: "createUserAcct",
       account: address,
     });
+    
   }
 
   return (

@@ -10,7 +10,7 @@ import { GiToken } from "react-icons/gi";
 
 type Props = {};
 
-const CarbonMarketplace = (props: Props) => {
+const RecyclinkMarketplace = (props: Props) => {
   const [listings, setListings] = useState<any[]>([]);
 
   const { isLoading, isError, isSuccess, data, error } = useReadContract({
@@ -113,4 +113,4 @@ const CarbonMarketplace = (props: Props) => {
   );
 };
 
-export default CarbonMarketplace;
+export default RecyclinkMarketplace;

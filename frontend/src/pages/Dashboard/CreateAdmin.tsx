@@ -178,7 +178,7 @@ const CreateAdmin = (props: Props) => {
               size="lg"
               label="Admin / Verifier name"
               labelPlacement="outside"
-              placeholder="e.g., blessed07"
+              placeholder="e.g., Tcrown"
               value={name}
               onValueChange={setName}
               classNames={{

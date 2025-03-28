@@ -24,7 +24,7 @@ import CreateAdmin from "./pages/Dashboard/CreateAdmin";
 import Stats from "./components/dashboard/home/Stats";
 import CreateCarbon from "./pages/Dashboard/CreateCarbon";
 import SingleCarbon from "./pages/Dashboard/SingleCarbon";
-import CarbonMarketplace from "./pages/Dashboard/CarbonMarket";
+import RecyclinkMarketplace from "./pages/Dashboard/CarbonMarket";
 import CompanyRegister from "./pages/Dashboard/CompanyRegister";
 import Disbursement from "./pages/Dashboard/Disbursement";
 import MyCarbonEvents from "./pages/Dashboard/MyCarbonEvents";
@@ -104,7 +104,7 @@ export function App() {
               <Route path="recycle" element={<Recycle />} />
               <Route path="disbursement" element={<Disbursement />} />
               <Route path="marketplace" element={<Marketplace />} />
-              <Route path="carbonmarket" element={<CarbonMarketplace />} />
+              <Route path="carbonmarket" element={<RecyclinkMarketplace />} />
               <Route path="createEvent" element={<CreateEvent />} />
               <Route path="createCarbon" element={<CreateCarbon />} />
               <Route path="purchases" element={<MyEvents />} />

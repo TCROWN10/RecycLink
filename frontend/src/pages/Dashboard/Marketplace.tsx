@@ -38,6 +38,8 @@ const Marketplace = (props: Props) => {
     // },
   });
 
+  console.log("Event Address:", data);
+
   useEffect(() => {
     setListings(data as any[]);
   }, [isSuccess]);

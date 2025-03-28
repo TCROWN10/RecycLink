@@ -16,7 +16,7 @@ import {
   EVENT_MARKETPLACE_ADDRESS,
   EVENTMARKETPLACEABI,
   USD_TOKEN_ADDRESS,
-  USDTOKENABI,
+  USDTokenABI,
 } from "../../../constants";
 import { toast } from "sonner";
 import {
@@ -80,7 +80,7 @@ const SingleCarbon = () => {
     isSuccess: isSuccess3,
   } = useReadContract({
     address: USD_TOKEN_ADDRESS,
-    abi: USDTOKENABI,
+    abi: USDTokenABI,
     functionName: "allowance",
     args: [address, RC_MARKETPLACE_ADDRESS ],
     // onError(data: any) {
@@ -104,7 +104,7 @@ const SingleCarbon = () => {
 
   useWatchContractEvent({
     address: USD_TOKEN_ADDRESS,
-    abi: USDTOKENABI,
+    abi: USDTokenABI,
     eventName: "Approval",
     onLogs(log: any) {
       setallowanceListener(log);
@@ -183,7 +183,7 @@ const SingleCarbon = () => {
     setLoadingA(true);
     writeContract2({
       address: USD_TOKEN_ADDRESS,
-      abi: USDTOKENABI,
+      abi: USDTokenABI,
       functionName: "approve",
       args: [RC_MARKETPLACE_ADDRESS , parseEther(`${total}`)],
       // onError(data: any) {

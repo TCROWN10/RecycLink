@@ -163,7 +163,7 @@ const CompanyRegister = () => {
                 onClick={handleSubmit}
                 isLoading={isLoading || settling}
                 isDisabled={!name}
-                className="w-6/12"
+                className="w-6/12 text-white"
               >
                 Register
               </Button>

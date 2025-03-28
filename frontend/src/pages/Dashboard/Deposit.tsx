@@ -127,7 +127,7 @@ const Recycle = () => {
                 What is SDG?
               </h3>
               <div className="px-1 py-1 lg:px-4 lg:py-4 leading-8">
-                SDG is an acronym for **Sustainable Development Goals**, which
+                SDG is an acronym for Sustainable Development Goals**, which
                 are a set of 17 global goals adopted by the United Nations in
                 2015 as a call to action to end poverty, protect the planet, and
                 ensure peace and prosperity for all by 2030 . The SDGs cover

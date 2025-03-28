@@ -5,7 +5,7 @@ import {
   RECYCLINK_ADDRESS,
   RECYCLINKABI,
   USD_TOKEN_ADDRESS,
-  USDTOKENABI,
+  USDTokenABI,
 } from "../../../constants";
 import ReactApexChart from "react-apexcharts";
 import React, { useEffect, useState } from "react";
@@ -46,7 +46,7 @@ const Wallet = () => {
 
   const { data: tokenData, isSuccess: gotTokenBalance } = useReadContract({
     address: USD_TOKEN_ADDRESS,
-    abi: USDTOKENABI,
+    abi: USDTokenABI,
     functionName: "balanceOf",
     args: [address],
   });
@@ -142,7 +142,7 @@ const Wallet = () => {
       position: "top",
       horizontalAlign: "left",
     },
-    colors: ["#3C50E0", "#80CAEE"],
+    colors: ["#611286", "#8F29BF"],
     chart: {
       fontFamily: "Satoshi, sans-serif",
       height: 335,
@@ -204,7 +204,7 @@ const Wallet = () => {
     markers: {
       size: 4,
       colors: "#fff",
-      strokeColors: ["#3056D3", "#80CAEE"],
+      strokeColors: ["#8F29BF", "#611286"],
       strokeWidth: 3,
       strokeOpacity: 0.9,
       strokeDashArray: 0,
@@ -355,7 +355,7 @@ const Wallet = () => {
   return (
     <section className="relative flex flex-col w-full p-4 space-y-12 lg:py-8">
       <section className="w-full bg-base-100 flex flex-col space-y-4 lg:flex-row lg:p-4 rounded-xl lg:space-x-3 lg:space-y-0 overflow-x-auto">
-        <section className="relative w-full lg:w-6/12 h-90 lg:h-100 px-2 rounded-2xl overflow-x-auto bg-gradient-to-br from-yellow-500/10 to-emerald-500/40 lg:px-3 lg:py-0">
+        <section className="relative w-full lg:w-6/12 h-90 lg:h-100 px-2 rounded-2xl overflow-x-auto bg-gradient-to-br from-[rgba(97,18,134,0.1)] to-[rgba(143,41,191,0.4)] lg:px-3 lg:py-0">
           <section className="h-60 lg:h-70 flex flex-col">
             <div className="w-full flex flex-row px-2 py-6 lg:py-6 lg:px-8">
               <div className="flex-1 flex flex-row items-center">
