@@ -1,10 +1,10 @@
 {
-  "name": "carbon-wise-ui",
+  "name": "recyclink-ui",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
