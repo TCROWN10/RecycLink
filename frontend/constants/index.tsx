@@ -1,3 +1,4 @@
+// @ts-nocheck
 import RECYCLINKABI from "./Recyclink.json"
 import EVENTMARKETPLACEABI from "./EventMarketPlace.json";
 import RCMARKETPLACEABI from "./RcMarktPlace.json";

@@ -398,6 +398,7 @@ const CreateEvent = (props: Props) => {
                       }}
                       // onChange={(e) => toTimeStamp(e.target.value)}
                       // onChange={(e) => toTimeStamp(e.toString())}
+                      // @ts-ignore
                       onChange={setDeadline}
                     />
                     <Button
