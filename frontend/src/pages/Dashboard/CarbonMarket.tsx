@@ -4,7 +4,7 @@ import { formatUnits } from "viem";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import { formatDate } from "../../utils";
-import { RC_MARKETPLACE_ADDRESS , RCMARKETPLACEABI } from "../../../constants";
+import { RC_MARKETPLACE_ADDRESS , RCMARKETPLACEABI } from "../../constants";
 import { Card, CardBody, CardHeader, Skeleton } from "@nextui-org/react";
 import { GiToken } from "react-icons/gi";
 

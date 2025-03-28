@@ -9,7 +9,7 @@ import {
   useWriteContract,
 } from "wagmi";
 
-import { RECYCLINKABI, RECYCLINK_ADDRESS } from "../../../constants";
+import { RECYCLINKABI, RECYCLINK_ADDRESS } from "../../constants";
 import { useWasteWiseContext } from "../../context";
 import useNotificationCount from "../../hooks/useNotificationCount";
 import { useNavigate } from "react-router-dom";

@@ -8,7 +8,7 @@ import SignUpButton from "./SignUpButton";
 import Logo from "./Logo";
 // import Button from "./Button";
 import { useWasteWiseContext } from "../context";
-import { RECYCLINK_ADDRESS, RECYCLINKABI } from "../../constants";
+import { RECYCLINK_ADDRESS, RECYCLINKABI } from "../constants";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { Button } from "@nextui-org/button";
 import NewUserConnectModal from "./NewConnectModal";

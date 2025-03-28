@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import {
   EVENT_MARKETPLACE_ADDRESS,
   EVENTMARKETPLACEABI,
-} from "../../../constants";
+} from "../../constants";
 import { pinFileToIPFS } from "../../utils";
 import { toast } from "sonner";
 import { parseEther } from "viem";

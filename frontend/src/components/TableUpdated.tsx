@@ -19,7 +19,7 @@ import {
 } from "@nextui-org/react";
 import { useAccount, useReadContract } from "wagmi";
 import { useWasteWiseContext } from "../context";
-import { RECYCLINK_ADDRESS, RECYCLINKABI } from "../../constants";
+import { RECYCLINK_ADDRESS, RECYCLINKABI } from "../constants";
 import {
   capitalize,
   formatDate,

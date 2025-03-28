@@ -6,9 +6,9 @@ import {
 } from "wagmi";
 // import Button from "../../components/Button";
 import { useNavigate } from "react-router-dom";
-import RECYCLINK_ABI from "../../../constants/Recyclink.json";
+import RECYCLINK_ABI from "../../constants/Recyclink.json";
 import { toast } from "sonner";
-import { RECYCLINK_ADDRESS } from "../../../constants";
+import { RECYCLINK_ADDRESS } from "../../constants";
 import { LucideArrowRight } from "lucide-react";
 import {
   Button,

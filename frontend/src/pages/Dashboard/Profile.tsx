@@ -3,7 +3,7 @@ import { useContractWrite, useSimulateContract, useWriteContract } from "wagmi";
 import Button from "../../components/Button";
 import { useWasteWiseContext } from "../../context";
 import { formatDate } from "../../utils";
-import { RECYCLINK_ADDRESS, RECYCLINKABI } from "../../../constants";
+import { RECYCLINK_ADDRESS, RECYCLINKABI } from "../../constants";
 import { toast } from "sonner";
 import useNotificationCount from "../../hooks/useNotificationCount";
 import { useNavigate } from "react-router-dom";

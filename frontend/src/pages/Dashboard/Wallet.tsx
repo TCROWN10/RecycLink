@@ -6,7 +6,7 @@ import {
   RECYCLINKABI,
   USD_TOKEN_ADDRESS,
   USDTokenABI,
-} from "../../../constants";
+} from "../../constants";
 import ReactApexChart from "react-apexcharts";
 import React, { useEffect, useState } from "react";
 import { ApexOptions } from "apexcharts";

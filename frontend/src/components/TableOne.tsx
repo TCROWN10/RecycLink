@@ -4,7 +4,7 @@ import {
   RECYCLINK_ADDRESS,
   USD_TOKEN_ADDRESS,
   RECYCLINKABI,
-} from "../../constants";
+} from "../constants";
 import BrandOne from "../assets/images/brand/brand-01.svg";
 import BrandTwo from "../assets/images/brand/brand-02.svg";
 import BrandThree from "../assets/images/brand/brand-03.svg";

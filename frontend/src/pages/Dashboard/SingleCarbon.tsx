@@ -17,7 +17,7 @@ import {
   EVENTMARKETPLACEABI,
   USD_TOKEN_ADDRESS,
   USDTokenABI,
-} from "../../../constants";
+} from "../../constants";
 import { toast } from "sonner";
 import {
   Button,

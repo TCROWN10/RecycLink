@@ -5,7 +5,7 @@ import {
   useWriteContract,
 } from "wagmi";
 import { useNavigate } from "react-router-dom";
-import { RC_MARKETPLACE_ADDRESS , RCMARKETPLACEABI } from "../../../constants";
+import { RC_MARKETPLACE_ADDRESS , RCMARKETPLACEABI } from "../../constants";
 import { pinFileToIPFS } from "../../utils";
 import { toast } from "sonner";
 import { parseEther } from "viem";
