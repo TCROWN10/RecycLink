@@ -11,7 +11,7 @@ import {
 import useDarkMode from "use-dark-mode";
 import { type DarkMode } from "use-dark-mode";
 import { useAccount, useReadContract } from "wagmi";
-import { RECYCLINK_ADDRESS, RECYCLINKABI } from "../../constants";
+import { RECYCLINK_ADDRESS, RECYCLINKABI } from "../constants";
 
 type contextType = {
   wastewiseStore: any;

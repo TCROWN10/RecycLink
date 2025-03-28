@@ -15,7 +15,7 @@ import { toast } from "sonner";
 import SignUpButton from "../components/SignUpButton";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../components/Logo";
-import { RECYCLINK_ADDRESS, RECYCLINKABI } from "../../constants";
+import { RECYCLINK_ADDRESS, RECYCLINKABI } from "../constants";
 import useNotificationCount from "../hooks/useNotificationCount";
 import Navbar from "../components/Navbar";
 import { Button } from "@nextui-org/button";

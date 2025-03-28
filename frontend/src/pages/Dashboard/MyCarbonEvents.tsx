@@ -10,7 +10,7 @@ import {
     RCMARKETPLACEABI,
     EVENT_MARKETPLACE_ADDRESS,
     EVENTMARKETPLACEABI,
-} from "../../../constants";
+} from "../../constants";
 import { formatEther } from "viem";
 import { toast } from "sonner";
 

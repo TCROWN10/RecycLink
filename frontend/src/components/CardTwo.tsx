@@ -2,7 +2,7 @@ import { useAccount, useReadContract } from "wagmi";
 import {
   EVENT_MARKETPLACE_ADDRESS,
   EVENTMARKETPLACEABI,
-} from "../../constants";
+} from "../constants";
 import { MdEventNote } from "react-icons/md";
 
 const CardTwo = () => {

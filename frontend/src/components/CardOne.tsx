@@ -4,7 +4,7 @@ import {
   RECYCLINK_ADDRESS,
   USDTokenABI,
   USD_TOKEN_ADDRESS,
-} from "../../constants";
+} from "../constants";
 
 import { formatEther } from "viem";
 import { GiToken } from "react-icons/gi";

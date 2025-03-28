@@ -7,7 +7,7 @@ import { formatDate } from "../../utils";
 import {
   EVENT_MARKETPLACE_ADDRESS,
   EVENTMARKETPLACEABI,
-} from "../../../constants";
+} from "../../constants";
 import { toast } from "sonner";
 import {
   Button,
