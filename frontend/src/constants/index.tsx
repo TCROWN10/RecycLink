@@ -2,7 +2,7 @@
 import RECYCLINKABI from "./Recyclink.json"
 import EVENTMARKETPLACEABI from "./EventMarketPlace.json";
 import RCMARKETPLACEABI from "./RcMarktPlace.json";
-import USDTokenABI from "./USDToken.json";
+import USDTokenABI from "./usdToken.json";
 
 const RECYCLINK_ADDRESS = "0x42d6FDF995fEE0B34e0311F94D16Fcf4392635fb";
 const USD_TOKEN_ADDRESS = "0xf882bdE91E63cE2b9F16cbc3b568BB66A1358B90";
