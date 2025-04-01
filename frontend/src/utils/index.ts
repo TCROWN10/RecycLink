@@ -3,7 +3,7 @@ import { toast } from "sonner";
 import useNotificationCount from "../hooks/useNotificationCount";
 import axios from "axios";
 
-export const activeBgColor = "#026937";
+export const activeBgColor = "#611286";
 
 export const shortenAddress = (addr: string) => {
   return `${addr?.substring(0, 6)}...${addr?.substring(addr.length - 4)}`;

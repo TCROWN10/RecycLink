@@ -29,7 +29,7 @@ const TextReplacementAnimation = () => {
     'Track',
     'Trade',
     'Earn',
-    'Sustain'
+    'Sustainably!'
   ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
