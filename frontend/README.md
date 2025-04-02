@@ -12,7 +12,7 @@ Let’s turn waste into wealth—and carbon reductions. Let’s build a sustaina
 
 **RecycLinke** tokenizes real-world assets (recycled plastic) to create a transparent and verifiable market for carbon credits. Our platform enables users to deposit plastic waste at designated collection points in exchange for Deposit Tokens, which can be spent in the marketplace. The collected plastics are then sent to recycling facilities where they are processed and converted into verifiable carbon credits.
 
-![Image](./Roadmap.svg)
+![Image](../Roadmap.svg)
 
 ## Contracts
 
